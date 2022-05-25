@@ -10,7 +10,12 @@
         class="content"
       >
         <div class="blocks">
-          <button type="submit" mat-raised-button color="primary">
+          <button
+            type="submit"
+            mat-raised-button
+            color="primary"
+            (click)="openDialog()"
+          >
             <mat-icon>add</mat-icon> Add Post
           </button>
         </div>
@@ -31,7 +36,7 @@
                     Date Posted
                   </mat-header-cell>
                   <mat-cell *matCellDef="let element">
-                    {{ element.date_posted | date: "d/M/y" }}
+                    {{ element.datePosted | date: "d/M/y" }}
                   </mat-cell>
                 </ng-container>
                 <ng-container matColumnDef="title">
@@ -51,7 +56,7 @@
                 <ng-container matColumnDef="delete">
                   <mat-header-cell *matHeaderCellDef></mat-header-cell>
                   <mat-cell *matCellDef="let element">
-                    <a type="button">
+                    <a (click)="deletePost(element.position)" type="button">
                       <mat-icon class="icon">delete</mat-icon>
                     </a>
                   </mat-cell>

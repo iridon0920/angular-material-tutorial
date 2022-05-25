@@ -9,17 +9,26 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRouters } from './app.routes';
 import { DataService } from './data/data.service';
+import { PostDialogComponent } from './post-dialog/post-dialog.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, WelcomeComponent, DashboardComponent],
+  declarations: [
+    AppComponent,
+    WelcomeComponent,
+    DashboardComponent,
+    PostDialogComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
     AppRouters,
+    FormsModule,
   ],
   providers: [DataService],
   bootstrap: [AppComponent],
+  entryComponents: [PostDialogComponent],
 })
 export class AppModule {}
